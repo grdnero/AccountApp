@@ -262,28 +262,8 @@ No external NuGet packages required.
 
 ---
 
-## 📄 License
-
-This project is provided as-is for educational purposes.
-
----
-
-## 👨‍💻 Author
-
-Created as a demonstration of secure authentication practices in C#.
-
----
-
 ## 🔗 Related Projects
 
 - **AuthKeyGenerator**: Standalone console tool for computing 2FA keys from recovery words
 - **AccountApp**: Main WinForms application
 
----
-
-## 📞 Support
-
-For issues or questions, review the code comments in:
-- `Services/AuthService.cs` — Authentication flow
-- `Services/CryptoService.cs` — Cryptographic operations
-- `Services/Utils.cs` — 2FA key algorithm
