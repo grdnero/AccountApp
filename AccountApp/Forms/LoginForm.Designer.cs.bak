@@ -1,0 +1,145 @@
+namespace AccountApp.Forms
+{
+    partial class LoginForm
+    {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.TableLayoutPanel mainTableLayout;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.mainTableLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
+            this.mainTableLayout.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // TableLayoutPanel for centering and organizing controls
+            var mainLayout = new System.Windows.Forms.TableLayoutPanel();
+            mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            mainLayout.ColumnCount = 3;
+            mainLayout.RowCount = 4;
+            
+            // Set up column styles (left margin, content, right margin)
+            mainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            mainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            mainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            
+            // Set up row styles
+            mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            
+            this.Controls.Add(mainLayout);
+            
+            // Create inner panel for username/password fields
+            var fieldsPanel = new System.Windows.Forms.TableLayoutPanel();
+            fieldsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            fieldsPanel.ColumnCount = 2;
+            fieldsPanel.RowCount = 3;
+            fieldsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            fieldsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(75, 20);
+            this.usernameLabel.TabIndex = 0;
+            this.usernameLabel.Text = "Username:";
+            fieldsPanel.Controls.Add(this.usernameLabel, 0, 0);
+            
+            // usernameTextBox
+            // 
+            this.usernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(200, 27);
+            this.usernameTextBox.TabIndex = 1;
+            fieldsPanel.Controls.Add(this.usernameTextBox, 1, 0);
+            
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(73, 20);
+            this.passwordLabel.TabIndex = 2;
+            this.passwordLabel.Text = "Password:";
+            fieldsPanel.Controls.Add(this.passwordLabel, 0, 1);
+            
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '•';
+            this.passwordTextBox.Size = new System.Drawing.Size(200, 27);
+            this.passwordTextBox.TabIndex = 3;
+            fieldsPanel.Controls.Add(this.passwordTextBox, 1, 1);
+            
+            // Button panel
+            var buttonPanel = new System.Windows.Forms.FlowLayoutPanel();
+            buttonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            buttonPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            buttonPanel.WrapContents = false;
+            
+            // loginButton
+            // 
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(94, 29);
+            this.loginButton.TabIndex = 4;
+            this.loginButton.Text = "Login";
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            buttonPanel.Controls.Add(this.loginButton);
+            
+            // registerButton
+            // 
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(94, 29);
+            this.registerButton.TabIndex = 5;
+            this.registerButton.Text = "Register";
+            this.registerButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            buttonPanel.Controls.Add(this.registerButton);
+            
+            fieldsPanel.Controls.Add(buttonPanel, 1, 2);
+            
+            // Add the fields panel to the main layout in the middle column
+            mainLayout.Controls.Add(fieldsPanel, 1, 1);
+            // 
+            // LoginForm
+            // 
+            this.AcceptButton = this.loginButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(500, 300);
+            this.MinimumSize = new System.Drawing.Size(400, 250);
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            this.MaximizeBox = true;
+            this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Account Login";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.TextBox usernameTextBox;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button registerButton;
+    }
+}
